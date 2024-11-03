@@ -31,6 +31,8 @@ for num in range(2, 200 + 1):
         list_prime.append(num)
 print(list_prime)
 
+from collections import Counter
+
 question: list[str] = []
 
 while True:
@@ -45,3 +47,9 @@ while True:
 print(
     f"the amount of student that are answered a:{question.count("a")}, b:{question.count("b")},"
     f" c:{question.count("c")} and d:{question.count("d")}")
+
+counter = Counter(question)
+most_common_answer = counter.most_common(1)[0][0]
+least_common_answer = counter.most_common()[-1][0]
+print(f'The least common answer is: {least_common_answer}')
+print(f"The most common answer is: {most_common_answer}")
